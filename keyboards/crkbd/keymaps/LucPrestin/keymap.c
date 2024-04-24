@@ -17,8 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdint.h>
+#include <oled_driver.h>
 
 #define LAYER_QWERTY 0
 #define LAYER_NUM_FN 1
@@ -64,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [LAYER_CONTROLS] = LAYOUT_split_3x6_3(
   //,------------------------------------------------------------------------------------.                   ,------------------------------------------------------------------------------.
-            KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,       KC_VOLD,                    KC_VOLU,                                          KC_NO,         KC_NO,   KC_UP,   KC_NO,   KC_NO,   KC_NO,
+            KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,       KC_VOLD,                    KC_VOLU,                                          KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //|--------------+--------+--------+--------+--------------+---------------------------|                   |---------------------------+--------------+--------+--------+--------+--------|
-            RGB_TOG,RGB_RMOD, RGB_MOD, RGB_HUI,       RGB_SAI,                    RGB_VAI,                                          KC_NO,       KC_LEFT, KC_DOWN, KC_RGHT,   KC_NO,   KC_NO,
+            RGB_TOG,RGB_RMOD, RGB_MOD, RGB_HUI,       RGB_SAI,                    RGB_VAI,                                          KC_NO,       KC_LEFT,   KC_UP,   KC_NO,  KC_RGHT,   KC_NO,
   //|--------------+--------+--------+--------+--------------+---------------------------|                   |---------------------------+--------------+--------+--------+--------+--------|
-              KC_NO,   KC_NO,   KC_NO, RGB_HUD,       RGB_SAD,                    RGB_VAD,                                          KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+              KC_NO,   KC_NO,   KC_NO, RGB_HUD,       RGB_SAD,                    RGB_VAD,                                          KC_NO,         KC_NO, KC_DOWN,   KC_NO,   KC_NO,   KC_NO,
   //|--------------+--------+--------+--------+--------------+---------------------------+---------|  |------+---------------------------+--------------+--------+--------+--------+--------|
                                                         KC_NO,                    KC_TRNS,    KC_NO,    KC_NO,                    KC_TRNS,         KC_NO
                                             //`----------------------------------------------------'  `-------------------------------------------------'
